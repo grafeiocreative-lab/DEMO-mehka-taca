@@ -874,7 +874,7 @@
       .sort((a,b) => a.vrstni_red - b.vrstni_red)
       .map(s => `
         <div class="svc" data-id="${s.id}" onclick="selectService('${s.id}')">
-          <div class="svc-icon"><img src="${s.icon}" alt="${s.ime}"></div>
+          <div class="svc-icon"><img src="<img src="${s.icon}" alt="${s.ime}">" alt="${s.ime}"></div>
           <h3>${s.ime}</h3>
           <div class="svc-desc">${s.opis}</div>
           <div class="svc-meta">

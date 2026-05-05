@@ -186,7 +186,8 @@
       box-shadow: 0 0 0 1px var(--coral), var(--shadow-hover);
     }
 
-    .svc-icon { font-size: 2.6rem; line-height: 1; }
+    .svc-icon { width: 72px; height: 72px; margin: 0 auto; }
+    .svc-icon img { width: 100%; height: 100%; object-fit: contain; }
     .svc h3 {
       font-size: 1.15rem;
       font-weight: 700;
@@ -582,7 +583,7 @@
       .about-img { max-height: 240px; }
       .services { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
       .svc { padding: 1.2rem 0.8rem; }
-      .svc-icon { font-size: 2rem; }
+      .svc-icon { width: 56px; height: 56px; }
       .svc h3 { font-size: 1rem; }
       .slots-grid { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); }
       .trust-bar { gap: 1.5rem; }
@@ -812,12 +813,12 @@
      STORITVE — v produkciji pridejo iz Supabase
      ============================================================ */
   const STORITVE = [
-    { id: '1', ime: 'Striženje mali pes',    trajanje: 60,  cena: 25,  opis: 'Psi do 10 kg',              icon: '🐩', vrstni_red: 1 },
-    { id: '2', ime: 'Striženje srednji pes',  trajanje: 90,  cena: 35,  opis: 'Psi 10–25 kg',             icon: '🐕', vrstni_red: 2 },
-    { id: '3', ime: 'Striženje veliki pes',   trajanje: 120, cena: 50,  opis: 'Psi nad 25 kg',            icon: '🦮', vrstni_red: 3 },
-    { id: '4', ime: 'Kopanje + sušenje',      trajanje: 45,  cena: 20,  opis: 'Brez striženja',           icon: '🛁', vrstni_red: 4 },
-    { id: '5', ime: 'Striženje krempljev',    trajanje: 15,  cena: 8,   opis: 'Samo kremplji',            icon: '✂️', vrstni_red: 5 },
-    { id: '6', ime: 'Trimanje',               trajanje: 90,  cena: 40,  opis: 'Za žičaste pasme',         icon: '🐾', vrstni_red: 6 },
+    { id: '1', ime: 'Striženje mali pes',    trajanje: 60,  cena: 25,  opis: 'Psi do 10 kg',              icon: 'img/icon-strizenje-mali.png', vrstni_red: 1 },
+    { id: '2', ime: 'Striženje srednji pes',  trajanje: 90,  cena: 35,  opis: 'Psi 10–25 kg',             icon: 'img/icon-strizenje-srednji.png', vrstni_red: 2 },
+    { id: '3', ime: 'Striženje veliki pes',   trajanje: 120, cena: 50,  opis: 'Psi nad 25 kg',            icon: 'img/icon-strizenje-veliki.png', vrstni_red: 3 },
+    { id: '4', ime: 'Kopanje + sušenje',      trajanje: 45,  cena: 20,  opis: 'Brez striženja',           icon: 'img/icon-kopanje.png', vrstni_red: 4 },
+    { id: '5', ime: 'Striženje krempljev',    trajanje: 15,  cena: 8,   opis: 'Samo kremplji',            icon: 'img/icon-kremplji.png', vrstni_red: 5 },
+    { id: '6', ime: 'Trimanje',               trajanje: 90,  cena: 40,  opis: 'Za žičaste pasme',         icon: 'img/icon-trimanje.png', vrstni_red: 6 },
   ];
 
   /* ============================================================
@@ -873,7 +874,7 @@
       .sort((a,b) => a.vrstni_red - b.vrstni_red)
       .map(s => `
         <div class="svc" data-id="${s.id}" onclick="selectService('${s.id}')">
-          <div class="svc-icon">${s.icon}</div>
+          <div class="svc-icon"><img src="${s.icon}" alt="${s.ime}"></div>
           <h3>${s.ime}</h3>
           <div class="svc-desc">${s.opis}</div>
           <div class="svc-meta">
@@ -895,7 +896,7 @@
     // preview v booking
     const prev = document.getElementById('selected-service-preview');
     prev.style.display = 'block';
-    document.getElementById('prev-icon').textContent = state.selectedService.icon;
+    document.getElementById('prev-icon').innerHTML = `<img src="${state.selectedService.icon}" alt="" style="width:40px;height:40px;object-fit:contain;">`;
     document.getElementById('prev-name').textContent = state.selectedService.ime;
     document.getElementById('prev-meta').textContent =
       `${state.selectedService.cena} € · ${state.selectedService.trajanje} min`;
@@ -1053,7 +1054,7 @@
     const dateStr = `${dnevi[dateObj.getDay()]}, ${dateObj.getDate()}. ${meseci[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
 
     const html = `
-      <strong>${s.icon} ${s.ime}</strong><br>
+      <strong>${s.ime}</strong><br>
       📅 ${dateStr}<br>
       🕐 ${state.selectedSlot} – ${endTime} (${s.trajanje} min)<br>
       💰 ${s.cena} €<br><br>

@@ -80,33 +80,21 @@
       min-height: 460px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      text-align: center;
+      text-align: right;
       padding: 3rem 1.5rem;
-      gap: 0.8rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      color: var(--cream-mid);
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0.45rem 1.2rem;
-      border-radius: var(--radius-pill);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .hero h1 {
       font-family: 'Quicksand', sans-serif;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-size: clamp(5rem, 12vw, 8rem);
       font-weight: 700;
       color: #fff;
-      line-height: 1.15;
+      line-height: 1.05;
     }
 
     .hero h1 em {
@@ -116,18 +104,22 @@
 
     .hero h1 span {
       display: block;
-      font-size: 0.42em;
+      font-size: 0.32em;
       color: var(--cream-mid);
       font-weight: 500;
-      margin-top: 0.5rem;
+      margin-top: 0.15rem;
       opacity: 0.85;
+    }
+
+    .hero h1 span:first-of-type {
+      margin-top: 0.5rem;
     }
 
     .hero-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 0.6rem;
+      margin-top: 0.4rem;
       padding: 0.85rem 2rem;
       background: var(--coral);
       color: #fff;
@@ -584,7 +576,7 @@
 
     /* ---------- MOBILE ---------- */
     @media (max-width: 768px) {
-      .hero-inner { min-height: 360px; padding: 2rem 1rem; }
+      .hero-inner { min-height: 360px; padding: 2rem 1.2rem; }
       .booking { border-radius: 24px; padding: 1.8rem 1.2rem; margin: 1.5rem 0.5rem; }
       .about-grid { grid-template-columns: 1fr; }
       .about-img { max-height: 240px; }
@@ -610,12 +602,11 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span>&#x1F43E;</span> Maribor & okolica
-      </div>
       <h1>
-        <em>Mehka taca</em>
-        <span>Striženje, kopanje in razvajanje za vašega kosmatinca</span>
+        <em>Mehka</em><br>
+        <em>taca</em>
+        <span>Striženje, kopanje in razvajanje</span>
+        <span>za vašega kosmatinca</span>
       </h1>
       <a href="#booking" class="hero-cta">
         &#x2728; Naroči termin

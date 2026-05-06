@@ -525,7 +525,6 @@
       gap: 1rem;
     }
     .contact-card .c-icon {
-      font-size: 1.6rem;
       width: 48px; height: 48px;
       background: var(--coral-soft);
       border-radius: 14px;
@@ -533,6 +532,12 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+    .contact-card .c-icon img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
     }
     .contact-card .c-label {
       font-size: 0.75rem;
@@ -610,7 +615,7 @@
         <span>za vašega kosmatinca</span>
       </h1>
       <a href="#booking" class="hero-cta">
-        &#x2728; Naroči termin
+        &#x1F43E; Naroči termin
       </a>
     </div>
   </section>
@@ -749,13 +754,12 @@
 
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>Vsak kosmatinec si zasluži najboljšo oskrbo. Pri Puhastem Šapcu kombiniramo profesionalno striženje s toplim pristopom, ki pomiri tudi najbolj živahne tačke.</p>
+        <p>Vsak kosmatinec si zasluži najboljšo oskrbo. Pri Mehki taci kombiniramo profesionalno striženje s toplim pristopom, ki pomiri tudi najbolj živahne tačke.</p>
         <p>Uporabljamo samo naravno kozmetiko, prilagojeno občutljivi pasji koži. Vaš pes bo po obisku pri nas ne samo lep, ampak tudi sproščen in zadovoljen.</p>
         <p style="font-weight:700; color:var(--coral);">Ker vsak pes zasluži, da se počuti kot zvezda.</p>
       </div>
       <div class="about-img">
-        <!-- Zamenjaj z: <img src="img/salon.jpg" alt="Mehka taca salon"> -->
-        &#x1F436;
+        <img src="img/salon.jpg" alt="Mehka taca salon">
       </div>
     </div>
 
@@ -765,21 +769,21 @@
     </div>
     <div class="contact-bar reveal">
       <div class="contact-card">
-        <div class="c-icon">&#x1F4F1;</div>
+        <div class="c-icon"><img src="img/icon-telefon.png" alt="Telefon"></div>
         <div>
           <div class="c-label">Telefon</div>
           <div class="c-value"><a href="tel:040123456">040 123 456</a></div>
         </div>
       </div>
       <div class="contact-card">
-        <div class="c-icon">&#x1F4E7;</div>
+        <div class="c-icon"><img src="img/icon-email.png" alt="E-pošta"></div>
         <div>
           <div class="c-label">E-pošta</div>
           <div class="c-value"><a href="mailto:info@mehkataca.si">info@mehkataca.si</a></div>
         </div>
       </div>
       <div class="contact-card">
-        <div class="c-icon">&#x1F4CD;</div>
+        <div class="c-icon"><img src="img/icon-lokacija.png" alt="Naslov"></div>
         <div>
           <div class="c-label">Naslov</div>
           <div class="c-value">Tržaška cesta 12, 2000 Maribor</div>
